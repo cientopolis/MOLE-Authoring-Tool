@@ -3,6 +3,7 @@ import { Button, Form, Icon, Segment } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import intl from 'react-intl-universal'
 import {
   mcActions,
 } from '../../actions/tasks'
@@ -41,14 +42,14 @@ class MultipleChoiceComponent extends Component {
             />
             <Form.Checkbox
               name='isCorrect'
-              label='Es correcta'
+              label={intl.get("MULTIPLE_CHOICE_IS_RIGHT")}
               checked={option.isCorrect}
               onChange={(event, { value, name }) => this.handleOptionChange(index,option,name,!option.isCorrect)}
             />
             <Button basic color='red' onClick={() => deleteOption(index)}><Icon name='trash'/></Button>
           </Form.Group>))}
           </Form>
-        <Button basic primary  onClick={() => addOption({ value:'', isCorrect:false })}><Icon name='add'/>Agregar opción</Button>
+        <Button basic primary  onClick={() => addOption({ value:'', isCorrect:false })}><Icon name='add'/>{intl.get("MULTIPLE_CHOICE_ADD_OPTION")}</Button>
       </Segment>
     )
   }

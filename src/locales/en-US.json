@@ -34,6 +34,12 @@
     "TASK_TYPE_MC": "Multiple choice",
     "TASK_TYPE_FA": "Free answer",
     "TASK_TYPE_MT": "Multimedia task",
+    "FREE_ANSWER_OBJECTIVE":"Objective",
+    "FREE_ANSWER_ANSWER_EXPECTED":"Expected response",
+    "MULTIPLE_CHOICE_ADD_OPTION":"Add option",
+    "MULTIPLE_CHOICE_IS_RIGHT":"it's right?",
+    "MULTIMEDIA_TASK_OBJECTIVE":"Objective",
+    "MULTIMEDIA_TASK_PICK_TYPE_OF_CONTENT":"Choose a type of content",
 
     "_comment4":"Activity",
     "EDIT_ACTIVITY":"Editing Activity",

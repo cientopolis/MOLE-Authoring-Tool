@@ -3,6 +3,7 @@ import { Form} from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import intl from 'react-intl-universal'
 import {
   mtActions,
 } from '../../actions/tasks'
@@ -30,14 +31,13 @@ class MultimediaTaskComponent extends Component {
     return(
       <Form>
         <br/>
-        <Form.Input label='Consigna' placeholder='Consigna' onChange={(e,{value}) => setSlogan(value)} value={slogan} />
-        <h5>Tipo de respueta</h5>
+        <Form.Input label={intl.get('MULTIMEDIA_TASK_OBJECTIVE')} placeholder={intl.get('MULTIMEDIA_TASK_OBJECTIVE')} onChange={(e,{value}) => setSlogan(value)} value={slogan} />
         <Form.Select
           name='multimedia_type'
           required
-          label='Elija el tipo de contenido'
+          label={intl.get('MULTIMEDIA_TASK_PICK_TYPE_OF_CONTENT')}
           defaultValue={multimedia_type}
-          placeholder='Elija el tipo de contenido'
+          placeholder={intl.get('MULTIMEDIA_TASK_PICK_TYPE_OF_CONTENT')}
           onChange={(event, { value }) => setMultimediaType(value)}
           options={[
             { text:'Audio', value:AUDIO },

@@ -17,7 +17,7 @@
     "DESCRIPTION":"Descripción",
     "CREATE":"Crear",
 
-    "_comment4":"Activity",
+    "_comment3":"Activity",
     "TITLE_ACTIVITY":"Título de la Actividad",
     "EDITING_ACTIVITY":"Editando Actividad",
     "DESCRIPTION_ACTIVITY":"Descripcion de la Actividad",
@@ -26,7 +26,7 @@
     "DISCARD_ACTIVITY":"Descartar",
     "SAVE_ACTIVITY":"Guardar",
     
-    "_comment3": "Task",
+    "_comment4": "Task",
     "TASK_TITLE": "Creando tarea",
     "TASK_FIELD_TITLE": "Nombre",
     "TASK_FIELD_DESCRIPTION": "Descripción",
@@ -34,6 +34,12 @@
     "TASK_TYPE_MC": "Opción múltiple",
     "TASK_TYPE_FA": "Respuesta libre",
     "TASK_TYPE_MT": "Tarea Multimedia",
+    "FREE_ANSWER_OBJECTIVE":"Consigna",
+    "FREE_ANSWER_ANSWER_EXPECTED":"Respuesta esperada",
+    "MULTIPLE_CHOICE_ADD_OPTION":"Agregar opción",
+    "MULTIPLE_CHOICE_IS_RIGHT":"Es correcta?",
+    "MULTIMEDIA_TASK_OBJECTIVE":"Consigna",
+    "MULTIMEDIA_TASK_PICK_TYPE_OF_CONTENT":"Elija el tipo de contenido",
 
     "_comment5": "Workflow",
     "WORKFLOW_TITLE": "Definiendo workflow",
