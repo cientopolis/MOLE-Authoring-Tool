@@ -28,6 +28,7 @@ import '../styles/General.css'
 
 class HomeContainer extends Component {
 
+
   constructor(props) {
     super(props)
     this.toggleModal = this.toggleModal.bind(this)
@@ -42,7 +43,7 @@ class HomeContainer extends Component {
       getActivities,
       resetGet,
     } = this.props.actions
-    
+
     getActivities()
     resetGet()
   }
@@ -60,7 +61,7 @@ class HomeContainer extends Component {
       }
     } = this.props
 
-    if (status===OUTDATED) getActivities()
+    if (status === OUTDATED) getActivities()
   }
 
   checkActivityJustSaved(prevProps) {
@@ -75,7 +76,7 @@ class HomeContainer extends Component {
     }
   }
 
-  toggleModal = () => this.setState(state => ({creatingActivity: !state.creatingActivity}))
+  toggleModal = () => this.setState(state => ({ creatingActivity: !state.creatingActivity }))
 
   render() {
 
@@ -98,8 +99,8 @@ class HomeContainer extends Component {
     } = this.props
 
     const languageOptions = [
-      {key: 'es-ES', text: 'Espanol', value: 'es-ES'},
-      {key: 'en-US', text: 'English', value: 'en-US'},
+      { key: 'es-ES', text: 'Espanol', value: 'es-ES' },
+      { key: 'en-US', text: 'English', value: 'en-US' },
     ]
 
     return (
@@ -116,6 +117,9 @@ class HomeContainer extends Component {
             value={lang}
             onChange={(event, data) => setLanguage(data.value)}
           />
+          <a href="MOLE-app.apk" target='_blank' download>
+            <Button><i aria-hidden="true" class="download icon"></i> {intl.get("DOWNLOAD_APK")}</Button>
+          </a>
         </header>
         <img src={logo} className="logo" alt="logo" />
         <StatusList status={status} items={activities} render_item={
@@ -127,34 +131,34 @@ class HomeContainer extends Component {
               load={() => history.push(`/Activity/${activity.id}`)}
             />
           )
-        }/>
+        } />
         <Button basic primary onClick={this.toggleModal}>{intl.get('CREATE_NEW_ACTIVITY')}</Button>
         <CreationModal
-            open={this.state.creatingActivity}
-            toggle={this.toggleModal}
-            status={saveStatus}
-            item={this.props.newActivity}
-            validationError={this.state.validationError}
-            itemType={ACTIVITY}
-            actions={({
-              setField:setField,
-              save:() => {
-                if(title !== '' && description !== '') {
-                  saveActivity({title, description})
-                } else {
-                  this.setState(() => ({validationError:true}))
-                }
+          open={this.state.creatingActivity}
+          toggle={this.toggleModal}
+          status={saveStatus}
+          item={this.props.newActivity}
+          validationError={this.state.validationError}
+          itemType={ACTIVITY}
+          actions={({
+            setField: setField,
+            save: () => {
+              if (title !== '' && description !== '') {
+                saveActivity({ title, description })
+              } else {
+                this.setState(() => ({ validationError: true }))
               }
-            })}
+            }
+          })}
         />
-      </div>  
+      </div>
     )
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions : bindActionCreators({
+    actions: bindActionCreators({
       getActivities,
       deleteActivity,
       saveActivity,
@@ -165,17 +169,17 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-function mapStateToProps({activities,configuration}) {
+function mapStateToProps({ activities, configuration }) {
   const {
-    index:{
+    index: {
       activities: index,
       status,
     },
-    save:{
+    save: {
       status: saveStatus,
       last: savedActivity
     },
-    get:{
+    get: {
       activity: newActivity,
     },
   } = activities
@@ -189,4 +193,4 @@ function mapStateToProps({activities,configuration}) {
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(withRouter(HomeContainer))
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(HomeContainer))

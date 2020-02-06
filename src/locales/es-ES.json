@@ -16,6 +16,8 @@
     "TITLE":"Título",
     "DESCRIPTION":"Descripción",
     "CREATE":"Crear",
+    "DOWNLOAD_APK": "Descargar App",
+
 
     "_comment3":"Activity",
     "TITLE_ACTIVITY":"Título de la Actividad",
