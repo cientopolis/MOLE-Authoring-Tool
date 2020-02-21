@@ -8,6 +8,10 @@
     "EMPTY_LIST":"Aún no hay elementos",
     "EMPTY_LIST_MESSAGE":"Parece que la lista está vacía",
     "ACTIVITY":"Actividades",
+    "API_ERROR_MESSAGE":"Estamos obteniendo el listado del recurso",
+    "API_ERROR_MESSAGE_TITLE":"Un segundo",
+    "API_LOAD_MESSAGE":"Hubo un error tratando de obtener el listado del recurso",
+    "API_LOAD_MESSAGE_TITLE":"Lo sentimos",
     "EMPTY_FIELD_ERROR": "Este campo no puede estar vacío",
 
     "_comment2": "Home",

@@ -7,6 +7,10 @@
     "DELETE": "Delete",
     "EMPTY_LIST":"The list is empty",
     "ACTIVITY":"Activities",
+    "API_ERROR_MESSAGE":"We are trying to obtain the resource",
+    "API_ERROR_MESSAGE_TITLE":"Wait a second",
+    "API_LOAD_MESSAGE":"We haven a problem trying to obtain the resource",
+    "API_LOAD_MESSAGE_TITLE":"Sorry",
     "EMPTY_LIST_MESSAGE":"Oops the list is empty",
     "EMPTY_FIELD_ERROR": "This field cannot be empty",
 
