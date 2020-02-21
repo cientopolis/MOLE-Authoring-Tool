@@ -11,7 +11,7 @@ class ItemsList extends Component {
   constructor() {
     super()
     this.state = {
-      itemsOnPage:3,
+      itemsOnPage:99999, //para si hay que volver a la paginación, no haya que hacer todo de nuevo
       activePage:1,
     }
   }
@@ -42,7 +42,7 @@ class ItemsList extends Component {
             }
           </List>
           <Container textAlign='center'>
-            <Pagination color='blue'
+            {/* <Pagination color='blue' //para el paginado
               activePage={activePage}
               onPageChange={this.handlePaginationChange}
               totalPages={this.cutItems(items)}
@@ -50,7 +50,7 @@ class ItemsList extends Component {
               lastItem={null}
               prevItem={null}
               nextItem={null}
-            />
+            /> */}
           </Container>
         </div>
       ) : <InfoMessage title={intl.get('EMPTY_LIST')} description={intl.get('EMPTY_LIST_MESSAGE')} />
