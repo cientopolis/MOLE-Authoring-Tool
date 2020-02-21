@@ -56,6 +56,7 @@
     "DISCARD_ACTIVITY":"Cancel",
     "SAVE_ACTIVITY":"Save",
     "_comment5": "Workflow",
+    "WORKFLOW_TASK":"Task",
     "WORKFLOW_TITLE": "Defining workflow",
     "WORKFLOW_FREE": "Free",
     "WORKFLOW_SECUENTIAL": "Secuential",

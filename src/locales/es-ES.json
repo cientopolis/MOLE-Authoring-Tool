@@ -49,6 +49,7 @@
     "MULTIMEDIA_TASK_PICK_TYPE_OF_CONTENT":"Elija el tipo de contenido",
 
     "_comment5": "Workflow",
+    "WORKFLOW_TASK":"Tarea",
     "WORKFLOW_TITLE": "Definiendo workflow",
     "WORKFLOW_FREE": "Libre",
     "WORKFLOW_SECUENTIAL": "Secuencial",

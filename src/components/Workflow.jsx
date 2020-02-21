@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import { GraphView } from 'react-digraph'
 import { SECUENTIAL, CUSTOMIZED, FREE } from '../constants/workflows'
+import intl from 'react-intl-universal'
 
 const NODE_KEY = "id"
 
 const GraphConfig = {
 	NodeTypes: {
     empty: { // required to show empty nodes
-      typeText: "Tarea",
+      typeText: intl.get('WORKFLOW_TASK') ,
 			shapeId: "#empty", // relates to the type property of a node
 			shape: (
 				<symbol viewBox="0 0 100 100" id="empty" key="0">
