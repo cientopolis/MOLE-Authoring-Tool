@@ -104,6 +104,23 @@ class Workflow extends Component {
     return true
   }
 
+  onDeleteEdge = order => (selectedEdge, edges) => {
+    if (order === CUSTOMIZED) {
+      console.log(edges)
+      console.log(selectedEdge)
+      // this.props.setEdges(
+      //   // [
+      //   //   ...this.props.edges,
+      //   //   {
+      //   //     source: source.id,
+      //   //     target: target.id,
+      //   //     type: "emptyEdge"
+      //   //   }
+      //   // ]
+      // )
+    }
+  }
+
   render() {
 
     const {
@@ -131,11 +148,12 @@ class Workflow extends Component {
           onSelectNode={() => null}
           onCreateNode={() => null}
           onUpdateNode={() => null}
-          onDeleteNode={() => null}
+          onDeleteNode={() => console.log("NODO")}
           onSelectEdge={() => null}
           onCreateEdge={this.onCreateEdge.bind(this)(this.props.order)}
           onSwapEdge={() => null}
-          onDeleteEdge={() => null}
+          onDeleteEdge={() => console.log("ACA")}
+          // this.onDeleteEdge.bind(this)(this.props.order)
         />
       </div>
     )

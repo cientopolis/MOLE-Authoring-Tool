@@ -7,10 +7,11 @@
     "DELETE": "Eliminar",
     "EMPTY_LIST":"Aún no hay elementos",
     "EMPTY_LIST_MESSAGE":"Parece que la lista está vacía",
+    "ACTIVITY":"Actividades",
     "EMPTY_FIELD_ERROR": "Este campo no puede estar vacío",
 
     "_comment2": "Home",
-    "WELCOME_TITLE": "Bienvenido a la herramienta de configuración MoLE",
+    "WELCOME_TITLE": "MoLE",
     "ADD_TASK": "Añadir Tarea",
     "CREATE_NEW_ACTIVITY":"Crear Nueva Actividad",
     "TITLE":"Título",
@@ -25,7 +26,7 @@
     "DESCRIPTION_ACTIVITY":"Descripcion de la Actividad",
     "TASK_ACTIVITY":"Tareas",
     "ADD_TASK_ACTIVITY":"Añadir Tarea",
-    "DISCARD_ACTIVITY":"Descartar",
+    "DISCARD_ACTIVITY":"Cancelar",
     "SAVE_ACTIVITY":"Guardar",
     
     "_comment4": "Task",

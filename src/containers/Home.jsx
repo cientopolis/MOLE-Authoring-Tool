@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { Button, Header, Dropdown } from 'semantic-ui-react'
+import { Button, Header, Dropdown, Segment, Divider } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import intl from 'react-intl-universal'
@@ -122,6 +122,9 @@ class HomeContainer extends Component {
           </a>
         </header>
         <img src={logo} className="logo" alt="logo" />
+        <Segment>
+        <Header as='h3'>{intl.get('ACTIVITY')}</Header>
+        <Divider clearing />
         <StatusList status={status} items={activities} render_item={
           activity => (
             <ListItem
@@ -132,6 +135,7 @@ class HomeContainer extends Component {
             />
           )
         } />
+        </Segment>
         <Button basic primary onClick={this.toggleModal}>{intl.get('CREATE_NEW_ACTIVITY')}</Button>
         <CreationModal
           open={this.state.creatingActivity}
