@@ -11,7 +11,7 @@ const ListItem = ({name,load,del}) => (
         <Button basic primary onClick={del}><Icon name='trash'/>{intl.get('DELETE')}</Button> 
       </ButtonGroup>
     </List.Content>
-    <List.Content>{name}</List.Content>
+    <a onClick={load}>{name}</a>
   </List.Item>  
 )
 
