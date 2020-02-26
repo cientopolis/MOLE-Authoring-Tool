@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { List, Pagination, Container } from 'semantic-ui-react'
+import { List, Container } from 'semantic-ui-react'
 
 import {
   InfoMessage,
