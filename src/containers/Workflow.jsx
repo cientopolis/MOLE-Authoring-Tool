@@ -94,6 +94,9 @@ class ActivityWorkflow extends Component {
 			<div className="background">
 				<div className="container">
 					<Header as='h3'>{intl.get('WORKFLOW_TITLE')}</Header>
+					<Header as='h5'>{intl.get('WORKFLOW_ADD_EDGE')}</Header>
+					<Header as='h5'>{intl.get('WORKFLOW_DELETE_NODE')}</Header>
+					<Header as='h5'>{intl.get('WORKFLOW_MOVE_NODE')}</Header>
 					<Dropdown
 						selection
 						placeholder=''
