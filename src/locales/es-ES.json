@@ -51,7 +51,7 @@
     "_comment5": "Workflow",
     "WORKFLOW_TASK":"Tarea",
     "WORKFLOW_ADD_EDGE":"Para agregar una flecha, mantenga presionado shift y presione/deslice entre los círculos",
-    "WORKFLOW_DELETE_NODE":"Para borrar un círculo o una flecha, presione sobre ella y apriete eliminar.",
+    "WORKFLOW_DELETE_NODES":"Para borrar todas las flechas, presione en el boton limpiar workflow.",
     "WORKFLOW_MOVE_NODE":"Para mover un círculo, presione y deslice hacia donde quiera moverlo ",
     "WORKFLOW_TITLE": "Definiendo workflow",
     "WORKFLOW_FREE": "Libre",

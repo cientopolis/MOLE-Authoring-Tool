@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Dropdown, Header, ButtonGroup, Icon } from 'semantic-ui-react'
+import { Button, Dropdown, Header, ButtonGroup, Icon, Message } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
@@ -30,6 +30,7 @@ class ActivityWorkflow extends Component {
 		this.state = {
 			order: FREE,
 			edges: [],
+			cyclesWorkflow: false
 		}
 	}
 
@@ -119,7 +120,11 @@ class ActivityWorkflow extends Component {
 	}
 
 	deleteAllEdges() {
-		this.setState({ ...this.state, edges: [] })
+		this.setState({ ...this.state, edges: [], cyclesWorkflow: false })
+	}
+
+	changeCyclesWorkflow() {
+		this.setState({ ...this.state, cyclesWorkflow: !this.state.cyclesWorkflow })
 	}
 
 	render() {
@@ -138,14 +143,15 @@ class ActivityWorkflow extends Component {
 			{ key: 1, value: SECUENTIAL, text: intl.get('WORKFLOW_SECUENTIAL') },
 			{ key: 2, value: CUSTOMIZED, text: intl.get('WORKFLOW_CUSTOMIZED') }
 		]
+		const list = [
+
+		]
+
 
 		return status === SUCCESS ? (
 			<div className="background">
 				<div className="container">
 					<Header as='h3'>{intl.get('WORKFLOW_TITLE')}</Header>
-					<Header as='h5'>{intl.get('WORKFLOW_ADD_EDGE')}</Header>
-					<Header as='h5'>{intl.get('WORKFLOW_DELETE_NODE')}</Header>
-					<Header as='h5'>{intl.get('WORKFLOW_MOVE_NODE')}</Header>
 					<Dropdown
 						selection
 						placeholder=''
@@ -153,9 +159,22 @@ class ActivityWorkflow extends Component {
 						options={orderOptions}
 						onChange={this.changeDropdownValue.bind(this)}
 					/>
+					{this.state.order === CUSTOMIZED &&
+						<Message header='Como utilizar:' list={[
+							intl.get('WORKFLOW_ADD_EDGE'),
+							intl.get('WORKFLOW_MOVE_NODE'),
+							intl.get('WORKFLOW_DELETE_NODES'),
+						]} />
+					}
 					<div id='graph' style={{ margin: 30 }}>
 						<Workflow tasks={index} order={this.state.order} edges={this.state.edges} setEdges={this.setEdges.bind(this)} />
 					</div>
+					{this.state.cyclesWorkflow &&
+						<Message warning
+							header="Error, existen ciclos"
+							content="No es posible asignar este workflow, existen ciclos entre las tareas"
+						/>
+					}
 					{this.state.order === CUSTOMIZED &&
 						<Button basic color='blue' floated='left' onClick={this.deleteAllEdges.bind(this)}><Icon name='undo' />{intl.get("CLEAN_WORKFLOW")}</Button>
 					}
@@ -166,7 +185,7 @@ class ActivityWorkflow extends Component {
 								setWorkflow(this.state.edges, index)
 								history.push('/Activity/' + this.props.match.params.id)
 							} else {
-								alert("El workflow tiene ciclos")
+								this.changeCyclesWorkflow()
 							}
 						}}><Icon name='save' />{intl.get('SAVE')}</Button>
 					</ButtonGroup>
