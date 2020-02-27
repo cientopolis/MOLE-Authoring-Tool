@@ -73,6 +73,60 @@ class ActivityWorkflow extends Component {
 		this.setState(() => ({ edges }))
 	}
 
+	isNotAnAcyclicWorkflow() {
+		if(this.state.order !== CUSTOMIZED) { 
+			console.log("NOT COSTUMIZED")
+			return true
+		}
+		let dict = {}
+		this.state.edges.forEach((edge) => {
+			if(! dict[edge.source] ) {
+				dict[edge.source] = [ ]
+			} 
+			dict[edge.source].push(edge.target)
+			
+		})
+		var visited = []
+		var nodes = []
+		this.props.index.forEach((task) => {
+			nodes.push(task.id)
+		})
+		// console.log(nodes)
+		for(const node in nodes) {
+			console.log(nodes[node])	
+			if(! visited.includes(nodes[node])) {
+				visited.push(nodes[node])
+				// console.log(visited)
+				if(dict[nodes[node]]) {
+					const res = this.dfs(nodes[node], dict, visited)
+					if(!res) {return false}
+				}
+			} 
+		}
+		return true
+	}
+
+	dfs(node, adjacent, visited) {
+		console.log(adjacent[node])
+		for(const pos in adjacent[node]) {
+			console.log(adjacent[node][pos])
+			// console.log(visited)
+			if(! visited.includes(adjacent[node][pos])) {
+				console.log("PASO")
+				visited.push(adjacent[node][pos])
+				if(adjacent[adjacent[node][pos]]) {
+					const res = this.dfs(adjacent[adjacent[node][pos]], adjacent, visited)
+					console.log(res)
+					if(!res) {return false}
+				}
+			} else {
+				console.log("NO PASO")
+				return false
+			}
+		}
+		return true
+	}
+
 	render() {
 
 		const {
@@ -107,8 +161,12 @@ class ActivityWorkflow extends Component {
 					<ButtonGroup floated='right'>
 						<Button basic color='grey' floated='right' onClick={() => history.push('/Activity/' + this.props.match.params.id)}><Icon name='arrow left' />{intl.get("DISCARD_ACTIVITY")}</Button>
 						<Button basic primary onClick={() => {
-							setWorkflow(this.state.edges, index)
-							history.push('/Activity/' + this.props.match.params.id)
+							if(this.isNotAnAcyclicWorkflow()) {
+								setWorkflow(this.state.edges, index)
+								history.push('/Activity/' + this.props.match.params.id)
+							} else {
+								alert("El workflow tiene ciclos")
+							}
 						}}><Icon name='save' />{intl.get('SAVE')}</Button>
 					</ButtonGroup>
 				</div>
