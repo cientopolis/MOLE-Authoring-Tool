@@ -188,7 +188,7 @@ class ActivitySetUpContainer extends Component {
               } else {
                 this.setState(() => ({validationErrors:true}))
               }
-              }}><Icon name='upload' />{intl.get("SAVE_ACTIVITY")}</Button>
+              }}><Icon name='save' />{intl.get("SAVE_ACTIVITY")}</Button>
           </ButtonGroup>
         </Segment>
       </div>

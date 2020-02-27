@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Dropdown, Header } from 'semantic-ui-react'
+import { Button, Dropdown, Header, ButtonGroup, Icon } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
@@ -53,24 +53,24 @@ class ActivityWorkflow extends Component {
 			status,
 		} = this.props
 
-		if(prevProps.status !== status && status !== PENDING) {
+		if (prevProps.status !== status && status !== PENDING) {
 			const edges = index.reduce(
-				((edges, task) => [...edges, ...task.requiredTasks.map(source => ({source, target:task.id, type:"emptyEdge"}))]),
+				((edges, task) => [...edges, ...task.requiredTasks.map(source => ({ source, target: task.id, type: "emptyEdge" }))]),
 				[]
 			)
 			if (JSON.stringify(edges) !== JSON.stringify(this.state.edges)) {
 				this.setState(() => ({
 					edges,
 					order: (edges !== []) ? CUSTOMIZED : FREE,
-				}))			
+				}))
 			}
 		}
 	}
 
-	changeDropdownValue = (e,{value}) => this.setState(() => ({order:value}))
+	changeDropdownValue = (e, { value }) => this.setState(() => ({ order: value }))
 
 	setEdges = (edges) => {
-		this.setState(() => ({edges}))
+		this.setState(() => ({ edges }))
 	}
 
 	render() {
@@ -102,13 +102,15 @@ class ActivityWorkflow extends Component {
 						onChange={this.changeDropdownValue.bind(this)}
 					/>
 					<div id='graph' style={{ margin: 30 }}>
-						<Workflow tasks={index} order={this.state.order} edges={this.state.edges} setEdges={this.setEdges.bind(this)}/>
+						<Workflow tasks={index} order={this.state.order} edges={this.state.edges} setEdges={this.setEdges.bind(this)} />
 					</div>
-					<Button onClick={() => {
-						setWorkflow(this.state.edges, index)
-						history.push('/Activity/' + this.props.match.params.id)
-					}}>{intl.get('SAVE')}</Button>
-					<Button onClick={() => history.push('/Activity/' + this.props.match.params.id)}>{intl.get('BACK')}</Button>
+					<ButtonGroup floated='right'>
+						<Button basic color='grey' floated='right' onClick={() => history.push('/Activity/' + this.props.match.params.id)}><Icon name='arrow left' />{intl.get("DISCARD_ACTIVITY")}</Button>
+						<Button basic primary onClick={() => {
+							setWorkflow(this.state.edges, index)
+							history.push('/Activity/' + this.props.match.params.id)
+						}}><Icon name='save' />{intl.get('SAVE')}</Button>
+					</ButtonGroup>
 				</div>
 			</div>
 		) : null
