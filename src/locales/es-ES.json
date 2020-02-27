@@ -56,6 +56,7 @@
     "WORKFLOW_TITLE": "Definiendo workflow",
     "WORKFLOW_FREE": "Libre",
     "WORKFLOW_SECUENTIAL": "Secuencial",
-    "WORKFLOW_CUSTOMIZED": "Personalizado"
+    "WORKFLOW_CUSTOMIZED": "Personalizado",
+    "CLEAN_WORKFLOW": "Limpiar Workflow"
     
 }

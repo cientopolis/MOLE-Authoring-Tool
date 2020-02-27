@@ -106,8 +106,11 @@ class HomeContainer extends Component {
     return (
       <div id="Home" className="background">
         <header className="header">
-          <Header>
-            {intl.get('WELCOME_TITLE')}
+          <Header textAlign='center'>
+            MOLE
+            <Header.Subheader as='h3'>
+              Mobile Object Learning Experience
+            </Header.Subheader>
           </Header>
           <Dropdown
             button
@@ -123,18 +126,18 @@ class HomeContainer extends Component {
         </header>
         <img src={logo} className="logo" alt="logo" />
         <Segment>
-        <Header as='h3'>{intl.get('ACTIVITY')}</Header>
-        <Divider clearing />
-        <StatusList status={status} items={activities} render_item={
-          activity => (
-            <ListItem
-              name={activity.title}
-              key={activity.id}
-              del={() => deleteActivity(activity.id)}
-              load={() => history.push(`/Activity/${activity.id}`)}
-            />
-          )
-        } />
+          <Header as='h3'>{intl.get('ACTIVITY')}</Header>
+          <Divider clearing />
+          <StatusList status={status} items={activities} render_item={
+            activity => (
+              <ListItem
+                name={activity.title}
+                key={activity.id}
+                del={() => deleteActivity(activity.id)}
+                load={() => history.push(`/Activity/${activity.id}`)}
+              />
+            )
+          } />
         </Segment>
         <Button basic primary onClick={this.toggleModal}>{intl.get('CREATE_NEW_ACTIVITY')}</Button>
         <CreationModal

@@ -55,6 +55,7 @@
     "ADD_TASK_ACTIVITY":"Add Task",
     "DISCARD_ACTIVITY":"Cancel",
     "SAVE_ACTIVITY":"Save",
+
     "_comment5": "Workflow",
     "WORKFLOW_TASK":"Task",
     "WORKFLOW_ADD_EDGE":"To add an arrow, hold shift and click/drag to between circles",
@@ -63,6 +64,7 @@
     "WORKFLOW_TITLE": "Defining workflow",
     "WORKFLOW_FREE": "Free",
     "WORKFLOW_SECUENTIAL": "Secuential",
-    "WORKFLOW_CUSTOMIZED": "Custom"
+    "WORKFLOW_CUSTOMIZED": "Custom",
+    "CLEAN_WORKFLOW": "Clean Workflow"
 
 }
