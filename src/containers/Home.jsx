@@ -109,7 +109,7 @@ class HomeContainer extends Component {
           <Header textAlign='center'>
             MOLE
             <Header.Subheader as='h3'>
-              Mobile Object Learning Experience
+              Mobile Learning Experience
             </Header.Subheader>
           </Header>
           <Dropdown

@@ -17,21 +17,26 @@ class MultipleChoiceComponent extends Component {
     })
   }
 
+  handleCreateSlogan
+
   render() {
 
     const {
       payload:{
         options,
+        slogan,
       },
       actions:{
         addOption,
         deleteOption,
+        setSlogan,
       }
     } = this.props
 
     return(
       <Segment>
         <Form>
+        <Form.Input label={intl.get("FREE_ANSWER_OBJECTIVE")} placeholder={intl.get("FREE_ANSWER_OBJECTIVE")} onChange={(e,{value}) => setSlogan(value)} value={slogan} />
         {options.map((option, index) => (
           <Form.Group key={index}>
             <br/>
@@ -59,9 +64,10 @@ class MultipleChoiceComponent extends Component {
 function mapDispatchToProps(dispatch) {
   return {
     actions : bindActionCreators({
-      addOption:mcActions.addOption,
-      updateOption:mcActions.updateOption,
-      deleteOption:mcActions.deleteOption,
+      setSlogan : mcActions.setSlogan,
+      addOption : mcActions.addOption,
+      updateOption : mcActions.updateOption,
+      deleteOption : mcActions.deleteOption,
     }, dispatch)
   }
 }

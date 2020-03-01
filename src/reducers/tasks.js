@@ -18,6 +18,7 @@ import {
   TASK_DELETE_FAILURE,
   CURRENT_TASK_FIELD_SET,
   CURRENT_TASK_TYPE_SET,
+  MC_TASK_SLOGAN_SET,
   MC_TASK_OPTION_ADD,
   MC_TASK_OPTION_UPDATE,
   MC_TASK_OPTION_DELETE,
@@ -260,6 +261,21 @@ const taskReducer = (state = initialState, action) => {
         }
       }
     //Case especificos de tareas Multiple Choice
+    case MC_TASK_SLOGAN_SET:
+      return {
+        ...state,
+        get: {
+          ...state.get,
+          status: OUTDATED,
+          task: {
+            ...state.get.task,
+            payload: {
+              ...state.get.task.payload,
+              slogan:action.payload,
+            }
+          }
+        }
+      }
     case MC_TASK_OPTION_ADD:
       return {
         ...state,

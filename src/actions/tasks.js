@@ -18,6 +18,7 @@ import {
   TASK_DELETE_FAILURE,
   CURRENT_TASK_FIELD_SET,
   CURRENT_TASK_TYPE_SET,
+  MC_TASK_SLOGAN_SET,
   MC_TASK_OPTION_ADD,
   MC_TASK_OPTION_UPDATE,
   MC_TASK_OPTION_DELETE,
@@ -140,6 +141,10 @@ export const setCurrentTaskType = (type, defaultPayload) => ({
 
 //Actions especificas para tarea de tipo Multiple-Choice
 export const mcActions = {
+  setSlogan: slogan => ({
+    type: MC_TASK_SLOGAN_SET,
+    payload: slogan
+  }),
   addOption: option => ({
     type:MC_TASK_OPTION_ADD,
     payload:{
