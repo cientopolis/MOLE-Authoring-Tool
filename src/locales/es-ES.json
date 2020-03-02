@@ -32,6 +32,8 @@
     "ADD_TASK_ACTIVITY":"Añadir Tarea",
     "DISCARD_ACTIVITY":"Cancelar",
     "SAVE_ACTIVITY":"Guardar",
+    "DOWNLOAD_ACTIVITY":"Descargar",
+    "QR_DOWNLOAD_TITLE":"Por favor lea el QR para descargar una actividad",
     
     "_comment4": "Task",
     "TASK_TITLE": "Creando tarea",

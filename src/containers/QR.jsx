@@ -1,5 +1,5 @@
 import React, { Component }  from 'react'
-import { Button, Header } from 'semantic-ui-react'
+import { Button, Header, Container } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { withRouter } from 'react-router-dom'
@@ -48,11 +48,15 @@ class QRContainer extends Component {
 
 		return (
 			<div className="background">
-				<div className="container">
-					<Header as='h3'>{intl.get('WORKFLOW_TITLE')}</Header>
-					<QRCode value= {this.props.match.params.id} />
-					<Button onClick={() => history.push('/Activity/' + this.props.match.params.id)}>{intl.get('BACK')}</Button>
-				</div>
+			<div className="container">
+			<Container textAlign='center'>
+					<Header as='h3'>{intl.get('QR_DOWNLOAD_TITLE')}</Header>
+					<QRCode size='300' value= {this.props.match.params.id} />
+					<Container textAlign='center'>
+					<Button basic color='grey' onClick={() => history.push('/Activity/' + this.props.match.params.id)}>{intl.get('BACK')}</Button>
+					</Container>
+			</Container>
+			</div>
 			</div>
 		) 
 	}
