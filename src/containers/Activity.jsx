@@ -160,8 +160,8 @@ class ActivitySetUpContainer extends Component {
           />
           <Divider/>
           <Button basic primary onClick={this.toggleModal}><Icon name='add' />{intl.get("ADD_TASK")}</Button>
-          <Button basic color='grey' onClick={() => history.push(`/activity/${id}/workflow`)}>Workflow</Button>
-          <Button basic color='grey' onClick={() => history.push(`/activity/${id}/qr`)}>{intl.get("DOWNLOAD_ACTIVITY")}</Button>
+          <Button basic color='grey' onClick={() => history.push(`/activity/${id}/workflow`)}><Icon name='code branch' />Workflow</Button>
+          <Button basic color='grey' onClick={() => history.push(`/activity/${id}/qr`)}><Icon name='qrcode' />{intl.get("DOWNLOAD_ACTIVITY")}</Button>
           <CreationModal
             open={this.state.creatingTask}
             toggle={this.toggleModal}

@@ -32,7 +32,7 @@
     "ADD_TASK_ACTIVITY":"Añadir Tarea",
     "DISCARD_ACTIVITY":"Cancelar",
     "SAVE_ACTIVITY":"Guardar",
-    "DOWNLOAD_ACTIVITY":"Descargar",
+    "DOWNLOAD_ACTIVITY":"Visualizar QR",
     "QR_DOWNLOAD_TITLE":"Por favor lea el QR para descargar una actividad",
     
     "_comment4": "Task",

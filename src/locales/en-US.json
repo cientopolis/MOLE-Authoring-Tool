@@ -31,7 +31,7 @@
     "ADD_TASK_ACTIVITY":"Add Task",
     "DISCARD_ACTIVITY":"Cancel",
     "SAVE_ACTIVITY":"Save",
-    "DOWNLOAD_ACTIVITY":"Download",
+    "DOWNLOAD_ACTIVITY":"Visualize QR",
     "QR_DOWNLOAD_TITLE":"Please read a QR code for download the activity",
     
 
