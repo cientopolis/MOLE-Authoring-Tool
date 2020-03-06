@@ -57,7 +57,7 @@
     "WORKFLOW_MOVE_NODE":"Click and drag circle to change their position",
     "WORKFLOW_TITLE": "Defining workflow",
     "WORKFLOW_FREE": "Free",
-    "WORKFLOW_SECUENTIAL": "Secuential",
+    "WORKFLOW_SECUENTIAL": "Sequential",
     "WORKFLOW_CUSTOMIZED": "Custom",
     "CLEAN_WORKFLOW": "Clean Workflow"
 
