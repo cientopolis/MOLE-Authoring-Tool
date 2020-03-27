@@ -10,10 +10,10 @@ import {
 
 class MultipleChoiceComponent extends Component {
 
-  handleOptionChange(index,option,field,value) {
-    this.props.actions.updateOption(index,{
+  handleOptionChange(index, option, field, value) {
+    this.props.actions.updateOption(index, {
       ...option,
-      [field]:value,
+      [field]: value,
     })
   }
 
@@ -22,40 +22,40 @@ class MultipleChoiceComponent extends Component {
   render() {
 
     const {
-      payload:{
+      payload: {
         options,
         slogan,
       },
-      actions:{
+      actions: {
         addOption,
         deleteOption,
         setSlogan,
       }
     } = this.props
 
-    return(
-      <Segment>
-        <Form>
-        <Form.Input label={intl.get("FREE_ANSWER_OBJECTIVE")} placeholder={intl.get("FREE_ANSWER_OBJECTIVE")} onChange={(e,{value}) => setSlogan(value)} value={slogan} />
-        {options.map((option, index) => (
-          <Form.Group key={index}>
-            <br/>
-            <Form.Input
-              name='value' 
-              value={option.value}
-              onChange={(event, { value, name }) => this.handleOptionChange(index,option,name,value)}  
-            />
-            <Form.Checkbox
-              name='isCorrect'
-              label={intl.get("MULTIPLE_CHOICE_IS_RIGHT")}
-              checked={option.isCorrect}
-              onChange={(event, { value, name }) => this.handleOptionChange(index,option,name,!option.isCorrect)}
-            />
-            <Button basic color='red' onClick={() => deleteOption(index)}><Icon name='trash'/></Button>
-          </Form.Group>))}
-          </Form>
-        <Button basic primary  onClick={() => addOption({ value:'', isCorrect:false })}><Icon name='add'/>{intl.get("MULTIPLE_CHOICE_ADD_OPTION")}</Button>
-      </Segment>
+    return (
+      <Form>
+        <Form.Input label={intl.get("FREE_ANSWER_OBJECTIVE")} placeholder={intl.get("FREE_ANSWER_OBJECTIVE")} onChange={(e, { value }) => setSlogan(value)} value={slogan} />
+        <Segment>
+          {options.map((option, index) => (
+            <Form.Group key={index}>
+              <br />
+              <Form.Input
+                name='value'
+                value={option.value}
+                onChange={(event, { value, name }) => this.handleOptionChange(index, option, name, value)}
+              />
+              <Form.Checkbox
+                name='isCorrect'
+                label={intl.get("MULTIPLE_CHOICE_IS_RIGHT")}
+                checked={option.isCorrect}
+                onChange={(event, { value, name }) => this.handleOptionChange(index, option, name, !option.isCorrect)}
+              />
+              <Button basic color='red' onClick={() => deleteOption(index)}><Icon name='trash' /></Button>
+            </Form.Group>))}
+          <Button basic primary onClick={() => addOption({ value: '', isCorrect: false })}><Icon name='add' />{intl.get("MULTIPLE_CHOICE_ADD_OPTION")}</Button>
+        </Segment>
+      </Form>
     )
   }
 }
@@ -63,13 +63,13 @@ class MultipleChoiceComponent extends Component {
 //Funcion que mapea las acciones con las funciones que llamamos desde el componente
 function mapDispatchToProps(dispatch) {
   return {
-    actions : bindActionCreators({
-      setSlogan : mcActions.setSlogan,
-      addOption : mcActions.addOption,
-      updateOption : mcActions.updateOption,
-      deleteOption : mcActions.deleteOption,
+    actions: bindActionCreators({
+      setSlogan: mcActions.setSlogan,
+      addOption: mcActions.addOption,
+      updateOption: mcActions.updateOption,
+      deleteOption: mcActions.deleteOption,
     }, dispatch)
   }
 }
 
-export default connect(null,mapDispatchToProps)(MultipleChoiceComponent)
+export default connect(null, mapDispatchToProps)(MultipleChoiceComponent)
