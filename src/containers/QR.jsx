@@ -51,7 +51,8 @@ class QRContainer extends Component {
 			<div className="container">
 			<Container textAlign='center'>
 					<Header as='h3'>{intl.get('QR_DOWNLOAD_TITLE')}</Header>
-					<QRCode size='300' value= {this.props.match.params.id} />
+					<Header as='h3'>{this.props.match.params.id}</Header>
+					<QRCode size='200' value= {this.props.match.params.id} />
 					<Container textAlign='center'>
 					<Button basic color='grey' onClick={() => history.push('/Activity/' + this.props.match.params.id)}>{intl.get('BACK')}</Button>
 					</Container>

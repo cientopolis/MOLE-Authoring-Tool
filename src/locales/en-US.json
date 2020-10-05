@@ -32,7 +32,7 @@
     "DISCARD_ACTIVITY":"Cancel",
     "SAVE_ACTIVITY":"Save",
     "DOWNLOAD_ACTIVITY":"Visualize QR",
-    "QR_DOWNLOAD_TITLE":"Please read a QR code for download the activity",
+    "QR_DOWNLOAD_TITLE":"Please read a QR code for download the activity or put the following code",
     
 
     "_comment4": "Task",
