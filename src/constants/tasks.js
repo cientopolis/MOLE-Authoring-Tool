@@ -32,3 +32,7 @@ export const FA_TASK_ANSWER_SET = 'fa-task-answer-set'
 //Constantes especificas del tipo de tarea Task Multimedia
 export const MT_TASK_SLOGAN_SET = 'mt-task-slogan-set'
 export const MT_TASK_MULTIMEDIA_TYPE_SET = 'mt-task-multimedia-type-set'
+
+//Constantes especificas del tipo de tarea Task Location
+export const LT_TASK_SLOGAN_SET = 'lt-task-slogan-set'
+export const LT_TASK_DESCRIPTION_SET = 'lt-task-description-set'

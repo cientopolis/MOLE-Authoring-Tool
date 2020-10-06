@@ -26,6 +26,8 @@ import {
   FA_TASK_SLOGAN_SET,
   MT_TASK_MULTIMEDIA_TYPE_SET,
   MT_TASK_SLOGAN_SET,
+  LT_TASK_DESCRIPTION_SET,
+  LT_TASK_SLOGAN_SET
 } from '../constants/tasks'
 
 import {
@@ -173,6 +175,18 @@ export const faActions = {
   setAnswer: answer => ({
     type:FA_TASK_ANSWER_SET,
     payload:answer,
+  })
+}
+
+//Actions especificas para tarea de tipo Location
+export const ltActions = {
+  setSlogan: slogan => ({
+    type:LT_TASK_SLOGAN_SET,
+    payload:slogan,
+  }),
+  setDescription: description => ({
+    type:LT_TASK_DESCRIPTION_SET,
+    payload:description,
   })
 }
 

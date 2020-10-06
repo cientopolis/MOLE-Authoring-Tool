@@ -9,6 +9,7 @@ import {
   MULTIPLE_CHOICE,
   FREE_ANSWER,
   MULTIMEDIA_TASK,
+  LOCATION_TASK,
 } from '../constants/taskTypes'
 import {
   getTask,
@@ -120,6 +121,7 @@ class TaskSetUpContainer extends Component {
                 { text:intl.get('TASK_TYPE_MC'), value:MULTIPLE_CHOICE },
                 { text:intl.get('TASK_TYPE_FA'), value:FREE_ANSWER },
                 { text:intl.get('TASK_TYPE_MT'), value:MULTIMEDIA_TASK },
+                { text:intl.get('TASK_TYPE_LT'), value:LOCATION_TASK },
               ]}
             />
           </Form>
