@@ -26,6 +26,8 @@ import {
   FA_TASK_SLOGAN_SET,
   MT_TASK_SLOGAN_SET,
   MT_TASK_MULTIMEDIA_TYPE_SET,
+  LT_TASK_SLOGAN_SET,
+  LT_TASK_DESCRIPTION_SET,
 } from '../constants/tasks'
 
 import {
@@ -379,6 +381,37 @@ const taskReducer = (state = initialState, action) => {
             payload:{
               ...state.get.task.payload,
               multimedia_type:action.payload,
+            }
+          }
+        }
+      }
+    // Case especificos para tareas de ubicacion
+    case LT_TASK_SLOGAN_SET:
+      return{
+        ...state,
+        get:{
+          ...state.get,
+          status:OUTDATED,
+          task:{
+            ...state.get.task,
+            payload:{
+              ...state.get.task.payload,
+              slogan:action.payload,
+            }
+          }
+        }
+      }
+    case LT_TASK_DESCRIPTION_SET:
+      return {
+        ...state,
+        get:{
+          ...state.get,
+          status:OUTDATED,
+          task:{
+            ...state.get.task,
+            payload:{
+              ...state.get.task.payload,
+              description:action.payload,
             }
           }
         }
